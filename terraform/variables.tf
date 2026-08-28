@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "AWS Region"
   type        = string
-  default     = "ap-south-1"
+  default     = "us-east-1"
 }
 
 variable "cluster_name" {
@@ -13,7 +13,7 @@ variable "cluster_name" {
 variable "cluster_version" {
   description = "EKS Cluster Version"
   type        = string
-  default     = "1.30"
+  default     = "1.34"
 }
 
 variable "vpc_cidr" {
