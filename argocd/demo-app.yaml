@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/rahulhingve/aws-eks-gitops-observability.git
+    repoURL: https://github.com/payalvishwekar/aws-eks-gitops-observability.git
     targetRevision: main
     path: helm-charts/app
   destination:
