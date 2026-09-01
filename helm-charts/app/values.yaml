@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: 287466334815.dkr.ecr.us-east-1.amazonaws.com/eks-demo-app
   pullPolicy: IfNotPresent
-  tag: "latest"
+  tag: "8e3878cd01fa7f193180c9f35c0613161f5f05e5"
 
 service:
   type: ClusterIP
