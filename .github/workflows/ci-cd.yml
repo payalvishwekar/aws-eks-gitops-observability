@@ -65,16 +65,16 @@ jobs:
             -t ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }} \
             -t ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:latest \
             .
-      - name: Verify ECR repository
-        run: |
-          aws sts get-caller-identity
-          echo "AWS_REGION=${{ env.AWS_REGION }}"
-          echo "ECR_REPOSITORY=${{ env.ECR_REPOSITORY }}"
+      # - name: Verify ECR repository
+      #   run: |
+      #     aws sts get-caller-identity
+      #     echo "AWS_REGION=${{ env.AWS_REGION }}"
+      #     echo "ECR_REPOSITORY=${{ env.ECR_REPOSITORY }}"
 
-          aws ecr describe-repositories \
-            --repository-names "${{ env.ECR_REPOSITORY }}" \
-            --region "${{ env.AWS_REGION }}"
-            .
+      #     aws ecr describe-repositories \
+      #       --repository-names "${{ env.ECR_REPOSITORY }}" \
+      #       --region "${{ env.AWS_REGION }}"
+            # .
       - name: Push image
         run: |
           docker push ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
