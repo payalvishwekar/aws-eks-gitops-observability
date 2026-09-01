@@ -74,7 +74,6 @@ jobs:
             --repository-names "${{ env.ECR_REPOSITORY }}" \
             --region "${{ env.AWS_REGION }}"
             .
-
       - name: Push image
         run: |
           docker push ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
