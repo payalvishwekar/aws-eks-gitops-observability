@@ -71,7 +71,7 @@ jobs:
       #     echo "AWS_REGION=${{ env.AWS_REGION }}"
       #     echo "ECR_REPOSITORY=${{ env.ECR_REPOSITORY }}"
 
-<<<<<<< HEAD
+
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
@@ -81,12 +81,12 @@ jobs:
           severity: 'CRITICAL,HIGH'
           ignore-unfixed: true
 
-=======
+
       #     aws ecr describe-repositories \
       #       --repository-names "${{ env.ECR_REPOSITORY }}" \
       #       --region "${{ env.AWS_REGION }}"
             # .
->>>>>>> 7c611243267eb0b316e6dc16d76c66603fee2cec
+
       - name: Push image
         run: |
           docker push ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
